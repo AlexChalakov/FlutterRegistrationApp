@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
   Widget _destinationDropDownWidget() {
     return CustomDropDownButtonClass(
       values: const [
-        'Alex Chalakov Station',
+        'Alex Ch Station',
         'Vicky Picky Station',
       ],
       width: _deviceWidth,
