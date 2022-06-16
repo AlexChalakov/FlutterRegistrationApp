@@ -14,7 +14,8 @@ class HomePage extends StatelessWidget {
         child: Container(
           height: _deviceHeight,
           width: _deviceWidth,
-          child: _pageTitle(),
+          padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
+          child: _destinationDropDownWidget(),
         ),
       ),
     );
@@ -38,6 +39,25 @@ class HomePage extends StatelessWidget {
           fit: BoxFit.contain,
           image: AssetImage("assets/images/astro_moon.png"),
         ),
+      ),
+    );
+  }
+
+  Widget _destinationDropDownWidget() {
+    List<DropdownMenuItem<String>> _items = [
+      'Alex Chalakov Station',
+      'Vicky Picky Station',
+    ].map((e) {
+      return DropdownMenuItem(
+        child: Text(e),
+        value: e,
+      );
+    }).toList();
+
+    return Container(
+      child: DropdownButton(
+        onChanged: (_) {},
+        items: _items,
       ),
     );
   }
